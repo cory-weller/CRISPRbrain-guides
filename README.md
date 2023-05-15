@@ -15,8 +15,22 @@ from [here](https://doi.org/10.1016/j.cell.2022.05.013)
 
 
 ## Run analysis
-Ran as a single script; see [`pathwaysAnalysis.R`](pathwaysAnalysis.R) for details
+Ran as a single script; see [`pathwaysAnalysis.R`](src/pathwaysAnalysis.R) for details
 
 ```bash
-Rscript ./pathwaysAnalysis.R
+module load R/4.2
+Rscript src/pathwaysAnalysis.R
 ```
+
+Producing the subsequent two outputs:
+* [Glutamatergic Neuron-Day-14-Survival-CRISPRi](outputs/pathway_enrichment_2_all.tsv)
+* [Glutamatergic Neuron-Survival-CRISPRi](outputs/pathway_enrichment_15_all.tsv)
+
+## Move forward
+Not moving forward with the day 14 survival because limited numbers of
+genes per cluster. Deciding to only use the output from
+[Glutamatergic Neuron-Survival-CRISPRi](data/Tian_et_al_2020_15.csv) 
+for the remaining analysis, which produced [this output](outputs/pathway_enrichment_15_all.tsv).
+
+
+
