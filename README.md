@@ -14,7 +14,7 @@ from [here](https://doi.org/10.1016/j.cell.2022.05.013)
 
 
 
-## Run analysis
+## Pathway analysis
 Ran as a single script; see [`pathwaysAnalysis.R`](src/pathwaysAnalysis.R) for details
 
 ```bash
@@ -26,11 +26,29 @@ Producing the subsequent two outputs:
 * [Glutamatergic Neuron-Day-14-Survival-CRISPRi](outputs/pathway_enrichment_2_all.tsv)
 * [Glutamatergic Neuron-Survival-CRISPRi](outputs/pathway_enrichment_15_all.tsv)
 
+## Guide RNA scoring
+[`guideScoring.R`](src/guideScoring.R) imports the supplemental excel
+file tables and combines them into a single summary file after doing
+some minor filtering (no duplicated guides, significant
+
+```bash
+module load R/4.2
+Rscript src/guideScoring.R
+```
+
 ## Move forward
 Not moving forward with the day 14 survival because limited numbers of
 genes per cluster. Deciding to only use the output from
 [Glutamatergic Neuron-Survival-CRISPRi](data/Tian_et_al_2020_15.csv) 
 for the remaining analysis, which produced [this output](outputs/pathway_enrichment_15_all.tsv).
 
-
-
+[`guideSelection.R`](src/guideSelection.R) attempts to:
+* Filter out clusters with < 3 genes
+* Pull sgRNA ID, sgRNA sequence, Gene name, and `q` value
+* Prioritize sgRNA by significance (`q` value)
+* 
+* 
+```bash
+module load R/4.2
+Rscript src/guideSelection.R
+```
