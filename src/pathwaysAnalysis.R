@@ -8,6 +8,7 @@ organism <- 'org.Hs.eg.db'
 library(organism, character.only = TRUE)
 # BiocManager::install("rWikiPathways")                         # Run if not installed
 library(rWikiPathways)
+library(openxlsx)
 
 # Import CRISPRbrain data
 dat.2 <- fread('data/Tian_et_al_2019_2.csv')
